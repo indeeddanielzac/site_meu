@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "9024b333"
+  },
+  "about.qmd": {
+    "about.html": "a4daee0e"
+  },
+  "artigos.qmd": {
+    "artigos.html": "08041758"
+  },
+  "cv.qmd": {
+    "cv.html": "c1614d33"
+  },
+  "blog.qmd": {
+    "blog.html": "19a888d0"
+  },
+  "posts/r4ds1.qmd": {
+    "r4ds1.html": "a9435b9b"
+  },
+  "posts/google_analytic.qmd": {
+    "google_analytic.html": "5a1a46a1"
+  }
+}

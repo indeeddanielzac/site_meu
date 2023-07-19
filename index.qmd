@@ -1,0 +1,23 @@
+---
+title: "Sobre mim"
+about:
+  template: solana
+  image: eu-.jpg
+  links: 
+    - icon: github
+      text: Github
+      href: https://github.com/indeeddanielzac
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/daniel-oliveira-zacarias-1a9626180/
+---
+
+Olá! Meu nome é Daniel e sou psicólogo com mestrado em Psicologia (CEUB). 
+
+Tenho experiência em coletar, transformar e organizar dados para análise, e sou proficiente em plataformas de análise de dados, incluindo SQL, planilhas e linguagem R.
+
+Sou membro do Instituto Nacional de Ciência e Tecnologia em Neurociência Social e Afetiva (INCT SANI).
+
+Minha pesquisa de mestrado foi sobre como a ideologia política pode influênciar na percepção de raça/cor de supostos candidatos políticos.
+
+Meus principais interesses são a compreensão de comportamentos, crenças e atitudes sociais que envolvem o campo da política (corrupção, comportamento político, intenção de voto, preconceitos e discriminação).

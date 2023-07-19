@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Daniel Oliveira Zacarias"
+  navbar: 
+    background: primary
+    search: true
+    left: 
+      - text: "Sobre mim"
+        file: index.qmd
+      - blog.qmd
+      - artigos.qmd
+      - cv.qmd
+      
+
+  page-footer: 
+    left: "Copyright 2023, Daniel O. Zacarias" 
+    right: 
+     - icon: github
+       href: https://github.com/indeeddanielzac
+     - icon: linkedin
+       href: https://www.linkedin.com/in/daniel-oliveira-zacarias-1a9626180/
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+
+lang: pt
