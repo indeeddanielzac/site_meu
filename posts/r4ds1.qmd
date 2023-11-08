@@ -28,6 +28,7 @@ Buscou-se analisar como as taxas de aprovação, reprovação e abandono variara
 
 ::: {.callout-note collapse="true"}
 ### Clique aqui para visualizar o código
+
 ``` r
 library(basededados)
 library(tidyverse)
@@ -137,7 +138,6 @@ r_em
 ```
 :::
 
-
 ## Abandono
 
 ![](images/rds1/ab_ef.png) ![](images/rds1/ab_em.png)
@@ -170,8 +170,6 @@ ab_ef
 ab_em
 ```
 :::
-
-
 :::
 
 ## Média de aulas diárias
@@ -216,7 +214,6 @@ em_ap_medias_aulas
 ```
 :::
 
-
 ## Reprovação
 
 ![](images/rds1/ef_rp_medias_aulas.png) ![](images/rds1/em_rp_medias_aulas.png)
@@ -252,7 +249,6 @@ em_rp_medias_aulas
 ```
 :::
 
-
 ## Abandono
 
 ![](images/rds1/ef_ab_medias_aulas.png) ![](images/rds1/em_ab_medias_aulas.png)
@@ -286,9 +282,7 @@ ef_ab_medias_aulas
 em_ab_medias_aulas
 ```
 :::
-
 :::
-
 
 # Considerações
 
