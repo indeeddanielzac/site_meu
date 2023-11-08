@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Sobre mim",
-    "section": "",
-    "text": "Olá! Meu nome é Daniel e sou psicólogo com mestrado em Psicologia (CEUB).\nTenho experiência em coletar, transformar e organizar dados para análise, e sou proficiente em plataformas de análise de dados, incluindo SQL, planilhas e linguagem R.\nSou membro do Instituto Nacional de Ciência e Tecnologia em Neurociência Social e Afetiva (INCT SANI).\nMinha pesquisa de mestrado foi sobre como a ideologia política pode influênciar na percepção de raça/cor de supostos candidatos políticos.\nMeus principais interesses são a compreensão de comportamentos, crenças e atitudes sociais que envolvem o campo da política (corrupção, comportamento político, intenção de voto, preconceitos e discriminação)."
-  },
-  {
     "objectID": "posts/r4ds1.html",
     "href": "posts/r4ds1.html",
     "title": "INEP",
@@ -42,6 +35,48 @@
     "text": "Notas de rodapé\n\n\nhttps://brasil.un.org/pt-br/81970-artigo-26-direito-educacao↩︎\nhttps://pne.mec.gov.br/18-planos-subnacionais-de-educacao/543-plano-nacional-de-educacao-lei-n-13-005-2014↩︎\nhttps://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb↩︎\nhttps://basedosdados.org/dataset/br-inep-indicadores-educacionais?bdm_table=escola↩︎"
   },
   {
+    "objectID": "posts/2023_30DaysMapChallenge.html",
+    "href": "posts/2023_30DaysMapChallenge.html",
+    "title": "Breve Particiação no 30 Days Map Challenge",
+    "section": "",
+    "text": "A ideia é criar mapas baseados em diferentes temas a cada dia de novembro usando a hashtag #30DayMapChallenge. Você pode preparar os mapas com antecedência, mas a ideia principal é publicar os mapas nos dias dedicados. Basta incluir uma imagem do mapa ao postar no Twitter (ou outras plataformas) com a hashtag. Para saber mais: https://30daymapchallenge.com/"
+  },
+  {
+    "objectID": "posts/2023_30DaysMapChallenge.html#dia-1-pontos",
+    "href": "posts/2023_30DaysMapChallenge.html#dia-1-pontos",
+    "title": "Breve Particiação no 30 Days Map Challenge",
+    "section": "Dia 1: Pontos",
+    "text": "Dia 1: Pontos"
+  },
+  {
+    "objectID": "posts/2023_30DaysMapChallenge.html#dia-2-linhas",
+    "href": "posts/2023_30DaysMapChallenge.html#dia-2-linhas",
+    "title": "Breve Particiação no 30 Days Map Challenge",
+    "section": "Dia 2: Linhas",
+    "text": "Dia 2: Linhas"
+  },
+  {
+    "objectID": "posts/2023_30DaysMapChallenge.html#dia-3-poligonos",
+    "href": "posts/2023_30DaysMapChallenge.html#dia-3-poligonos",
+    "title": "Breve Particiação no 30 Days Map Challenge",
+    "section": "Dia 3: Poligonos",
+    "text": "Dia 3: Poligonos"
+  },
+  {
+    "objectID": "posts/2023_30DaysMapChallenge.html#dia-4-mapa-ruim",
+    "href": "posts/2023_30DaysMapChallenge.html#dia-4-mapa-ruim",
+    "title": "Breve Particiação no 30 Days Map Challenge",
+    "section": "Dia 4: ‘Mapa Ruim’",
+    "text": "Dia 4: ‘Mapa Ruim’\nFocos de incêndio no Brasil e Arredores"
+  },
+  {
+    "objectID": "posts/2023_30DaysMapChallenge.html#dia-5-mapa-analógico",
+    "href": "posts/2023_30DaysMapChallenge.html#dia-5-mapa-analógico",
+    "title": "Breve Particiação no 30 Days Map Challenge",
+    "section": "Dia 5: Mapa Analógico",
+    "text": "Dia 5: Mapa Analógico"
+  },
+  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "Currículo",
@@ -68,6 +103,13 @@
     "title": "Projetos",
     "section": "",
     "text": "Breve Particiação no 30 Days Map Challenge\n\n\n\n\n\nA ideia é criar mapas baseados em diferentes temas a cada dia de novembro.\n\n\n\n\n\n\n8 de nov. de 2023\n\n\nDaniel Oliveira Zacarias\n\n\n\n\n\n\n  \n\n\n\n\nEstudo de Caso Bellabeat\n\n\n\n\n\nProjeto final do curso de Google Data Analytics. O objetivo do projeto foi obter insights sobre como as pessoas estão usando os dispositivos da empresa. Os smart devices coletam dados sobre atividade, sono, estresse e saúde reprodutiva.\n\n\n\n\n\n\n30 de dez. de 2022\n\n\nDaniel Oliveira Zacarias\n\n\n\n\n\n\n  \n\n\n\n\nINEP\n\n\n\n\n\nProjeto final do curso de Ciência de Dados I da curso-r. Foi realizada uma análise exploratória das taxas de aprovação, reprovação e abandono escolar em função do tempo.\n\n\n\n\n\n\n30 de out. de 2022\n\n\nDaniel Oliveira Zacarias\n\n\n\n\n\n\nNenhum item correspondente"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sobre mim",
+    "section": "",
+    "text": "Olá! Meu nome é Daniel e sou psicólogo com mestrado em Psicologia (CEUB).\nTenho experiência em coletar, transformar e organizar dados para análise, e sou proficiente em plataformas de análise de dados, incluindo SQL, planilhas e linguagem R.\nSou membro do Instituto Nacional de Ciência e Tecnologia em Neurociência Social e Afetiva (INCT SANI).\nMinha pesquisa de mestrado foi sobre como a ideologia política pode influênciar na percepção de raça/cor de supostos candidatos políticos.\nMeus principais interesses são a compreensão de comportamentos, crenças e atitudes sociais que envolvem o campo da política (corrupção, comportamento político, intenção de voto, preconceitos e discriminação)."
   },
   {
     "objectID": "posts/google_analytic.html#resumo",
@@ -103,47 +145,5 @@
     "title": "Estudo de Caso Bellabeat",
     "section": "Conclusão",
     "text": "Conclusão\nOs resultados mostram que existe uma correlação negativa entre a quantidade de minutos de sono e a quantidade de atividade física levemente ativa, moderadamente ativa e sedentária. Isso significa que,em geral, quanto mais atividade física dessas categorias uma pessoa faz, menos ela dorme.\nEsses resultados sugerem que é importante considerar a quantidade de atividade física levemente ativa, moderadamente ativa e sedentária ao avaliar a quantidade de sono de uma pessoa. No entanto, é importante lembrar que esses resultados são apenas uma indicação geral e podem variar de acordo com as características individuais de cada pessoa. Além disso, é possível que outros fatores, como o estresse, a alimentação e o horário de dormir, também possam afetar a quantidade de sono de uma pessoa.\nEssas informações podem ser úteis para criar campanhas de conscientização sobre a importância de se manter ativo e de ter hábitos de sono saudáveis."
-  },
-  {
-    "objectID": "posts/2023_30DaysMapChallenge.html#dia-2-linhas",
-    "href": "posts/2023_30DaysMapChallenge.html#dia-2-linhas",
-    "title": "Breve Particiação no 30 Days Map Challenge",
-    "section": "Dia 2: Linhas",
-    "text": "Dia 2: Linhas"
-  },
-  {
-    "objectID": "posts/2023_30DaysMapChallenge.html#dia-3-poligonos",
-    "href": "posts/2023_30DaysMapChallenge.html#dia-3-poligonos",
-    "title": "Breve Particiação no 30 Days Map Challenge",
-    "section": "Dia 3: Poligonos",
-    "text": "Dia 3: Poligonos"
-  },
-  {
-    "objectID": "posts/2023_30DaysMapChallenge.html#dia-4-mapa-ruim",
-    "href": "posts/2023_30DaysMapChallenge.html#dia-4-mapa-ruim",
-    "title": "Breve Particiação no 30 Days Map Challenge",
-    "section": "Dia 4: ‘Mapa Ruim’",
-    "text": "Dia 4: ‘Mapa Ruim’\nFocos de incêndio no Brasil e Arredores"
-  },
-  {
-    "objectID": "posts/2023_30DaysMapChallenge.html#dia-5-mapa-analógico",
-    "href": "posts/2023_30DaysMapChallenge.html#dia-5-mapa-analógico",
-    "title": "Breve Particiação no 30 Days Map Challenge",
-    "section": "Dia 5: Mapa Analógico",
-    "text": "Dia 5: Mapa Analógico"
-  },
-  {
-    "objectID": "posts/2023_30DaysMapChallenge.html",
-    "href": "posts/2023_30DaysMapChallenge.html",
-    "title": "Breve Particiação no 30 Days Map Challenge",
-    "section": "",
-    "text": "A ideia é criar mapas baseados em diferentes temas a cada dia de novembro usando a hashtag #30DayMapChallenge. Você pode preparar os mapas com antecedência, mas a ideia principal é publicar os mapas nos dias dedicados. Basta incluir uma imagem do mapa ao postar no Twitter (ou outras plataformas) com a hashtag. Para saber mais: https://30daymapchallenge.com/"
-  },
-  {
-    "objectID": "posts/2023_30DaysMapChallenge.html#dia-1-pontos",
-    "href": "posts/2023_30DaysMapChallenge.html#dia-1-pontos",
-    "title": "Breve Particiação no 30 Days Map Challenge",
-    "section": "Dia 1: Pontos",
-    "text": "Dia 1: Pontos"
   }
 ]
