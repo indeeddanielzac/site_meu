@@ -1,27 +1,33 @@
 ---
 title: "Breve Particiação no 30 Days Map Challenge"
-description: "Breve Particiação no 30 Days Map Challenge"
+description: "A ideia é criar mapas baseados em diferentes temas a cada dia de novembro."
 author: "Daniel Oliveira Zacarias"
-date: "10/30/2022"
+date: "11/08/2023"
 categories:
   - code
   - analysis
 ---
 
+A ideia é criar mapas baseados em diferentes temas a cada dia de novembro usando a hashtag #30DayMapChallenge. Você pode preparar os mapas com antecedência, mas a ideia principal é publicar os mapas nos dias dedicados. Basta incluir uma imagem do mapa ao postar no Twitter (ou outras plataformas) com a hashtag. Para saber mais: <https://30daymapchallenge.com/>
+
 ## Dia 1: Pontos
 
-![](30DaysMapChallenge_2023/day1/day1.png)
+[![](30DaysMapChallenge_2023/day1/day1.png)](https://github.com/indeeddanielzac/site_meu/blob/main/posts/30DaysMapChallenge_2023/day1/day1.R)
 
 ## Dia 2: Linhas
 
-![](30DaysMapChallenge_2023/day2/day2.png)
+[![](30DaysMapChallenge_2023/day2/day2.png)](https://github.com/indeeddanielzac/site_meu/blob/main/posts/30DaysMapChallenge_2023/day2/day2.R)
 
 ## Dia 3: Poligonos
 
-![](30DaysMapChallenge_2023/day3/day3.png)
+[![](30DaysMapChallenge_2023/day3/day3.png)](https://github.com/indeeddanielzac/site_meu/blob/main/posts/30DaysMapChallenge_2023/day3/day3.R)
 
 ## Dia 4: 'Mapa Ruim'
 
-![](30DaysMapChallenge_2023/day4/day4.gif)
+Focos de incêndio no Brasil e Arredores
+
+[![](30DaysMapChallenge_2023/day4/day4.gif)](https://github.com/indeeddanielzac/site_meu/tree/main/posts/30DaysMapChallenge_2023/day4)
 
 ## Dia 5: Mapa Analógico
+
+![](images/day5.jpg)

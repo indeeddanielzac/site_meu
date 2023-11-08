@@ -12,7 +12,7 @@ about:
       href: https://www.linkedin.com/in/daniel-oliveira-zacarias-1a9626180/
 ---
 
-Olá! Meu nome é Daniel e sou psicólogo com mestrado em Psicologia (CEUB). 
+Olá! Meu nome é Daniel e sou psicólogo com mestrado em Psicologia (CEUB).
 
 Tenho experiência em coletar, transformar e organizar dados para análise, e sou proficiente em plataformas de análise de dados, incluindo SQL, planilhas e linguagem R.
 
