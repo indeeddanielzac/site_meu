@@ -149,7 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#distribuição-de-idades-dos-clientes-por-gênero" id="toc-distribuição-de-idades-dos-clientes-por-gênero" class="nav-link active" data-scroll-target="#distribuição-de-idades-dos-clientes-por-gênero">Distribuição de Idades dos Clientes por gênero:</a></li>
+  <li><a href="#carregando-e-olhando-os-dados" id="toc-carregando-e-olhando-os-dados" class="nav-link active" data-scroll-target="#carregando-e-olhando-os-dados">Carregando e olhando os dados</a></li>
+  <li><a href="#distribuição-de-idades-dos-clientes-por-gênero" id="toc-distribuição-de-idades-dos-clientes-por-gênero" class="nav-link" data-scroll-target="#distribuição-de-idades-dos-clientes-por-gênero">Distribuição de Idades dos Clientes por gênero:</a></li>
   <li><a href="#distribuição-de-gastos-por-categoria-de-produto" id="toc-distribuição-de-gastos-por-categoria-de-produto" class="nav-link" data-scroll-target="#distribuição-de-gastos-por-categoria-de-produto">Distribuição de Gastos por Categoria de Produto:</a></li>
   <li><a href="#número-de-pedidos-por-zona" id="toc-número-de-pedidos-por-zona" class="nav-link" data-scroll-target="#número-de-pedidos-por-zona">Número de Pedidos por Zona:</a></li>
   <li><a href="#gastos-por-estado" id="toc-gastos-por-estado" class="nav-link" data-scroll-target="#gastos-por-estado">Gastos por Estado:</a></li>
@@ -200,6 +201,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="carregando-e-olhando-os-dados" class="level1">
+<h1>Carregando e olhando os dados</h1>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -231,6 +234,7 @@ $ Orders           &lt;dbl&gt; 1, 3, 3, 2, 2, 1, 4, 1, 2, 4, 1, 2, 2, 4, 3, 2, 3
 $ Amount           &lt;dbl&gt; 23952.00, 23934.00, 23924.00, 23912.00, 23877.00, 238…</code></pre>
 </div>
 </div>
+</section>
 <section id="distribuição-de-idades-dos-clientes-por-gênero" class="level1">
 <h1>Distribuição de Idades dos Clientes por gênero:</h1>
 <div class="cell">
@@ -292,13 +296,14 @@ $ Amount           &lt;dbl&gt; 23952.00, 23934.00, 23924.00, 23912.00, 23877.00,
 <div class="cell">
 <details>
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Amount, <span class="at">fill =</span> State)) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(State, Amount, <span class="at">.na_rm =</span> <span class="cn">TRUE</span>), <span class="at">y =</span> Amount, <span class="at">fill =</span> State)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gastos por Estado"</span>,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Estado"</span>,</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Valor Gasto em Rúpias Indianas"</span>) <span class="sc">+</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">scale =</span> <span class="fl">1e-6</span>, <span class="at">suffix =</span> <span class="st">"M"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="20231114tidytuesday_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
