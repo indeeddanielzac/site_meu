@@ -1,12 +1,12 @@
 ---
-title: "Diwali Sales"
+title: "Diwali Sales (Tidy Tuesday 46)"
 description: "Esta semana é Diwali, o festival das luzes! Os dados desta semana vêm de dados de vendas de uma loja de varejo durante o período do festival Diwali na Índia."
 author: "Daniel Oliveira Zacarias"
 date: "14/11/2023"
 categories:
   - code
   - analysis
-  - Tidy Tuesday
+  - TidyTuesday
 editor_options: 
   chunk_output_type: console
 execute:
