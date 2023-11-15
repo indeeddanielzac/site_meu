@@ -1,0 +1,146 @@
+---
+title: "Diwali Sales"
+description: "Esta semana é Diwali, o festival das luzes! Os dados desta semana vêm de dados de vendas de uma loja de varejo durante o período do festival Diwali na Índia."
+author: "Daniel Oliveira Zacarias"
+date: "14/11/2023"
+categories:
+  - code
+  - analysis
+  - Tidy Tuesday
+editor_options: 
+  chunk_output_type: console
+execute:
+  warning: false
+---
+# Carregando e olhando os dados
+
+```{r}
+
+library(dplyr)
+library(ggplot2)
+library(hrbrthemes)
+library(viridis)
+
+
+data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-11-14/diwali_sales_data.csv')
+
+glimpse(data)
+
+
+```
+
+# Distribuição de Idades dos Clientes por gênero:
+
+```{r}
+
+
+
+ggplot(data, aes(x = Age)) +
+  geom_histogram(binwidth = 5, fill = "#404080", color = "black") +
+  facet_wrap(~Gender) +
+  labs(title = "Distribuição de Idades dos Clientes por Gênero",
+       x = "Idade do Cliente",
+       y = "Frequência")+
+  theme_minimal()
+
+
+
+```
+
+# Distribuição de Gastos por Categoria de Produto:
+
+```{r}
+
+ggplot(data, aes(x = Product_Category, y = Amount, fill = Product_Category)) +
+  geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6, option="C")+
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size=11),
+      legend.position = "top", axis.text.x = element_blank())+
+  labs(title = "Distribuição de Gastos por Categoria de Produto",
+       x = "Categoria de Produto",
+       y = "Valor Gasto em Rúpias Indianas")
+
+
+```
+
+# Número de Pedidos por Zona:
+
+```{r}
+
+
+
+ggplot(data, aes(x = Zone, y = Orders, fill = Zone)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Número de Pedidos por Zona",
+       x = "Zona Geográfica",
+       y = "Número de Pedidos") +
+    guides(fill = "none")
+
+
+
+```
+
+
+# Gastos por Estado:
+
+```{r}
+
+
+ggplot(data, aes(x = forcats::fct_reorder(State, Amount, .na_rm = TRUE), y = Amount, fill = State)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Gastos por Estado",
+       x = "Estado",
+       y = "Valor Gasto em Rúpias Indianas") +
+  coord_flip()+
+    guides(fill = "none")+
+  scale_y_continuous(labels = scales::label_number(scale = 1e-6, suffix = "M"))
+
+
+
+
+```
+
+# Distribuição de Gastos por Gênero:
+
+```{r}
+
+ggplot(data, aes(x = Gender, y = Amount, fill = Gender)) +
+  geom_boxplot() +
+  labs(title = "Distribuição de Gastos por Gênero",
+       x = "Gênero do Cliente",
+       y = "Valor Gasto em Rúpias Indianas")
+
+
+```
+
+# Distribuição de Gastos por Categoria de Produto e Gênero:
+
+```{r}
+
+ggplot(data, aes(x = forcats::fct_reorder(Product_Category, Amount, .na_rm = TRUE), y = Amount, fill = Gender)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Distribuição de Gastos por Categoria de Produto e Gênero",
+       x = "Categoria de Produto",
+       y = "Valor Gasto em Rúpias Indianas",
+       fill = "Gênero")+ 
+  coord_flip()
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
