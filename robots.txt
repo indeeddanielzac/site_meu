@@ -1,1 +1,1 @@
-Sitemap: https://github.com/indeeddanielzac/site_meu/sitemap.xml
+Sitemap: https://indeeddanielzac.github.io/site_meu/sitemap.xml
