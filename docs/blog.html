@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Nenhum resultado",
     "search-matching-documents-text": "documentos correspondentes",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "mais correspondência neste documento",
     "search-more-matches-text": "mais correspondências neste documento",
     "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Procurar"
@@ -94,6 +101,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -101,9 +135,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Daniel Oliveira Zacarias</span>
     </a>
@@ -115,25 +149,25 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Sobre mim</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Sobre mim</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">Projetos</span></a>
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+<span class="menu-text">Projetos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./artigos.html" rel="" target="">
- <span class="menu-text">Artigos</span></a>
+    <a class="nav-link" href="./artigos.html"> 
+<span class="menu-text">Artigos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html" rel="" target="">
- <span class="menu-text">Currículo</span></a>
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">Currículo</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -162,7 +196,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 
 
@@ -170,25 +206,53 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="code,analysis,Tidy Tuesday" data-listing-date-sort="1707620400000" data-listing-file-modified-sort="1700023877580" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="0" data-categories="code,analysis,TidyTuesday" data-listing-date-sort="1730516400000" data-listing-file-modified-sort="1708750656805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="669">
 <div class="thumbnail">
-<p><a href="./posts/20231114tidytuesday.html"> <p class="card-img-top"><img src="posts\20231114tidytuesday_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/20240223tidytuesday.html" class="no-external"></a></p><a href="./posts/20240223tidytuesday.html" class="no-external">
+<p class="card-img-top"><img src="posts\20240223tidytuesday_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/20240223tidytuesday.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/20231114tidytuesday.html">
 <h3 class="no-anchor listing-title">
-Diwali Sales
+<a href="./posts/20240223tidytuesday.html" class="no-external">R Consortium ISC Grant</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/20240223tidytuesday.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Esta semana é Diwali, o festival das luzes! Os dados desta semana vêm de dados de vendas de uma loja de varejo durante o período do festival Diwali na Índia.</p>
+<a href="./posts/20240223tidytuesday.html" class="no-external">Esta semana os dados são sobre o R Consortium ISC. Uma iniciativa que contribue para reforçamento e melhoramento do Ecossistema em R.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/20240223tidytuesday.html" class="no-external">
+<div class="listing-date">
+2 de nov. de 2024
+</div>
+<div class="listing-author">
+Daniel Oliveira Zacarias
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="code,analysis,TidyTuesday" data-listing-date-sort="1707620400000" data-listing-file-modified-sort="1708729108118" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="403">
+<div class="thumbnail">
+<p><a href="./posts/20231114tidytuesday.html" class="no-external"></a></p><a href="./posts/20231114tidytuesday.html" class="no-external">
+<p class="card-img-top"><img src="posts\20231114tidytuesday_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/20231114tidytuesday.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/20231114tidytuesday.html" class="no-external">Diwali Sales (Tidy Tuesday 46)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/20231114tidytuesday.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/20231114tidytuesday.html" class="no-external">Esta semana é Diwali, o festival das luzes! Os dados desta semana vêm de dados de vendas de uma loja de varejo durante o período do festival Diwali na Índia.</a>
+</div>
+</div>
 <div class="metadata">
-<a href="./posts/20231114tidytuesday.html">
+<a href="./posts/20231114tidytuesday.html" class="no-external">
 <div class="listing-date">
 11 de fev. de 2024
 </div>
@@ -198,25 +262,25 @@ Daniel Oliveira Zacarias
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="code,analysis" data-listing-date-sort="1699412400000" data-listing-file-modified-sort="1700021291015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="2" data-categories="code,analysis" data-listing-date-sort="1699412400000" data-listing-file-modified-sort="1700021291015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76">
 <div class="thumbnail">
-<p><a href="./posts/2023_30DaysMapChallenge.html"> <p class="card-img-top"><img src="posts\30DaysMapChallenge_2023\day1\day1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2023_30DaysMapChallenge.html" class="no-external"></a></p><a href="./posts/2023_30DaysMapChallenge.html" class="no-external">
+<p class="card-img-top"><img src="posts\30DaysMapChallenge_2023\day1\day1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023_30DaysMapChallenge.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023_30DaysMapChallenge.html">
 <h3 class="no-anchor listing-title">
-Breve Particiação no 30 Days Map Challenge
+<a href="./posts/2023_30DaysMapChallenge.html" class="no-external">Breve Particiação no 30 Days Map Challenge</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023_30DaysMapChallenge.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>A ideia é criar mapas baseados em diferentes temas a cada dia de novembro.</p>
+<a href="./posts/2023_30DaysMapChallenge.html" class="no-external">A ideia é criar mapas baseados em diferentes temas a cada dia de novembro.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023_30DaysMapChallenge.html">
+<a href="./posts/2023_30DaysMapChallenge.html" class="no-external">
 <div class="listing-date">
 8 de nov. de 2023
 </div>
@@ -226,25 +290,25 @@ Daniel Oliveira Zacarias
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="code,analysis" data-listing-date-sort="1672369200000" data-listing-file-modified-sort="1689802214423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="3" data-categories="code,analysis" data-listing-date-sort="1672369200000" data-listing-file-modified-sort="1689802214423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1900">
 <div class="thumbnail">
-<p><a href="./posts/google_analytic.html"> <p class="card-img-top"><img src="posts\images\bellabit\running.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/google_analytic.html" class="no-external"></a></p><a href="./posts/google_analytic.html" class="no-external">
+<p class="card-img-top"><img src="posts\images\bellabit\running.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/google_analytic.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/google_analytic.html">
 <h3 class="no-anchor listing-title">
-Estudo de Caso Bellabeat
+<a href="./posts/google_analytic.html" class="no-external">Estudo de Caso Bellabeat</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/google_analytic.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Projeto final do curso de Google Data Analytics. O objetivo do projeto foi obter insights sobre como as pessoas estão usando os dispositivos da empresa. Os smart devices coletam dados sobre atividade, sono, estresse e saúde reprodutiva.</p>
+<a href="./posts/google_analytic.html" class="no-external">Projeto final do curso de Google Data Analytics. O objetivo do projeto foi obter insights sobre como as pessoas estão usando os dispositivos da empresa. Os smart devices coletam dados sobre atividade, sono, estresse e saúde reprodutiva.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/google_analytic.html">
+<a href="./posts/google_analytic.html" class="no-external">
 <div class="listing-date">
 30 de dez. de 2022
 </div>
@@ -254,25 +318,25 @@ Daniel Oliveira Zacarias
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="code,analysis" data-listing-date-sort="1667098800000" data-listing-file-modified-sort="1699470714261" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="4" data-categories="code,analysis" data-listing-date-sort="1667098800000" data-listing-file-modified-sort="1699470714261" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1872">
 <div class="thumbnail">
-<p><a href="./posts/r4ds1.html"> <p class="card-img-top"><img src="posts\images\rds1\ap_ef.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/r4ds1.html" class="no-external"></a></p><a href="./posts/r4ds1.html" class="no-external">
+<p class="card-img-top"><img src="posts\images\rds1\ap_ef.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/r4ds1.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/r4ds1.html">
 <h3 class="no-anchor listing-title">
-INEP
+<a href="./posts/r4ds1.html" class="no-external">INEP</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/r4ds1.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Projeto final do curso de Ciência de Dados I da curso-r. Foi realizada uma análise exploratória das taxas de aprovação, reprovação e abandono escolar em função do tempo.</p>
+<a href="./posts/r4ds1.html" class="no-external">Projeto final do curso de Ciência de Dados I da curso-r. Foi realizada uma análise exploratória das taxas de aprovação, reprovação e abandono escolar em função do tempo.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/r4ds1.html">
+<a href="./posts/r4ds1.html" class="no-external">
 <div class="listing-date">
 30 de out. de 2022
 </div>
@@ -366,10 +430,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -379,8 +442,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -393,6 +465,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -436,6 +627,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -461,6 +653,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -523,7 +741,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2023, Daniel O. Zacarias</div>   
+    <div class="nav-footer-left">
+<p>Copyright 2024, Daniel O. Zacarias</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -545,6 +765,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

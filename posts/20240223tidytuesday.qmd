@@ -1,0 +1,229 @@
+---
+title: "R Consortium ISC Grant"
+description: "Esta semana os dados são sobre o R Consortium ISC. Uma iniciativa que contribue para reforçamento e melhoramento do Ecossistema em R."
+author: "Daniel Oliveira Zacarias"
+date: "23/02/2023"
+categories:
+  - code
+  - analysis
+  - TidyTuesday
+editor_options: 
+  chunk_output_type: console
+execute:
+  warning: false
+---
+
+Nesse projeto quis trabalhar um pouco com modelagem texto.
+
+
+# Carregando e Explorando os dados
+
+```{r}
+library(tidyverse)
+
+
+isc_grants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-20/isc_grants.csv')
+
+isc_grants <-  isc_grants |> 
+  mutate(group = factor(ifelse(group == 1, "Primavera", "Outono")))
+
+library(tidytext)
+
+tidy_grants <- isc_grants |> 
+  unnest_tokens(word, summary)
+
+```
+
+
+Palavras mais frequentes:
+
+```{r}
+
+tidy_grants |> 
+  count(word, sort = TRUE) |> 
+  filter(n > 10)
+
+```
+
+Retirando as stopwords:
+
+```{r}
+
+tidy_grants |> 
+  anti_join(get_stopwords()) |>
+  count(word, sort = TRUE) |> 
+  filter(n > 10) |> 
+  slice(1:20) |>
+  mutate(word = reorder(word, n)) |> 
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  labs(y = "Frequência",
+       x = "Palavras",
+       title = "As 20 palavras mais frequentes nos resumos dos projetos do R Consortium ISC") +
+  theme_minimal()
+
+
+```  
+
+Palavras mais frequentes por projeto:
+
+```{r}
+
+
+tidy_grants |> 
+  anti_join(get_stopwords()) |>
+  count(title, word, sort = TRUE)
+  
+```
+
+
+# Treinando o modelo
+
+```{r}
+
+# Criando uma matriz esparsa para treinar o modelo STM
+
+projects_sparse <- tidy_grants |> 
+  count(title, word) |> 
+  cast_sparse(title, word, n)
+
+
+```
+
+```{r}
+
+library(stm)
+set.seed(2024)
+
+# Treinamento do modelo STM com 5 tópicos
+topic_model <- stm(projects_sparse, 
+                   K = 5, 
+                   verbose = FALSE)
+
+summary(topic_model)
+
+
+```
+
+```{r}
+
+# Obtendo as probabilidades (gamma) para cada projeto
+projects_gamma <- tidy(topic_model, 
+     matrix = "gamma", 
+     document_names = rownames(projects_sparse))
+
+projects_beta <- tidy(topic_model, matrix = "beta")
+
+
+# Juntando as probabilidades com as informações originais dos projetos e plotando
+projects_gamma |> 
+  left_join(isc_grants |> 
+              select(group, document = title)) |>
+  mutate(topic =  factor(topic)) |>
+  ggplot((aes(gamma, topic, fill = topic))) +
+  geom_boxplot(alpha = 0.6, show.legend = FALSE) +
+  facet_wrap(vars(group)) + 
+  theme_minimal()+
+  labs(title = "Distribuição das Probabilidades de Tópicos por Estação (Inverno x Verão",
+       y = "Tópico",
+       x = "Probabilidade (Gamma)")
+
+```
+
+Parece que o tópico 3 é mais frequente na primavera, enquanto o tópico 4 e 5 parece ser mais prevalente no outono. 
+
+```{r}
+
+projects_gamma |> 
+  left_join(isc_grants |> 
+              select(year, document = title)) |>
+  mutate(topic = factor(topic)) |>
+  ggplot(aes(gamma, topic, fill = topic)) +
+    geom_col(show.legend = FALSE) +
+    facet_wrap(vars(year), ncol = 4) +
+    theme_minimal() +
+    labs(title = "Distribuição das Probabilidades de Tópicos por Ano",
+       y = "Tópico",
+       x = expression(gamma))
+
+
+```
+
+
+Palavras mais frequentes utilizando o método FREX (FRequency and EXclusivity)
+
+```{r}
+
+tidy(topic_model, matrix = "frex") |> 
+  group_by(topic) |>
+  slice_head(n = 20) |>
+  mutate(rank = row_number()) |>
+  ungroup() |> 
+  arrange(topic) |> 
+  pivot_wider(
+    names_from = topic,
+    names_glue = "topic {.name}",
+    values_from = term) |> 
+  select(-rank) |> 
+  knitr::kable()
+
+
+```
+
+
+# Estimando efeitos dos tópicos por estação (inverno x verão)
+
+```{r}
+
+efeito_grupo <- estimateEffect(
+  1:5 ~ group,
+  topic_model,
+  isc_grants 
+)
+
+tidy(efeito_grupo) |> 
+  filter(term != "(Intercept)")
+
+```
+
+Parece que não há efeito dos tópicos nas estações (inverno x verão). E para ano?
+
+# Estimando efeitos dos tópicos por ano
+```{r}
+
+set.seed(2024)
+
+efeito_ano <- estimateEffect(
+  1:5 ~ factor(year),
+  topic_model,
+  isc_grants 
+)
+
+tidy(efeito_ano) |> 
+  filter(term != "(Intercept)", p.value < 0.05)
+
+```
+
+O tópico 1 parece ter sido mais proeminente no ano de 2018 e o 5 no ano de 2017.
+
+Os tópicos mais frequentes por lift:
+```{r}
+
+tidy(topic_model, matrix = "lift") |> 
+  filter(topic %in% c(1, 5)) |>
+  group_by(topic) |>
+  slice_head(n = 20) |>
+  mutate(rank = row_number()) |>
+  ungroup() |> 
+  arrange(topic) |> 
+  pivot_wider(
+    names_from = topic,
+    names_glue = "topic {.name}",
+    values_from = term) |> 
+  select(-rank) |> 
+  knitr::kable()
+```
+
+
